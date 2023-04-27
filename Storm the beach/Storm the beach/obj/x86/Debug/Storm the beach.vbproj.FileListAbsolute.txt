@@ -1,0 +1,9 @@
+C:\Users\Stone Yao\Documents\Visual Studio 2010\Projects\Storm the beach\Storm the beach\bin\Debug\Storm the beach.exe
+C:\Users\Stone Yao\Documents\Visual Studio 2010\Projects\Storm the beach\Storm the beach\bin\Debug\Storm the beach.pdb
+C:\Users\Stone Yao\Documents\Visual Studio 2010\Projects\Storm the beach\Storm the beach\bin\Debug\Storm the beach.xml
+C:\Users\Stone Yao\Documents\Visual Studio 2010\Projects\Storm the beach\Storm the beach\obj\x86\Debug\WindowsApplication1.Form1.resources
+C:\Users\Stone Yao\Documents\Visual Studio 2010\Projects\Storm the beach\Storm the beach\obj\x86\Debug\WindowsApplication1.Resources.resources
+C:\Users\Stone Yao\Documents\Visual Studio 2010\Projects\Storm the beach\Storm the beach\obj\x86\Debug\Storm the beach.vbproj.GenerateResource.Cache
+C:\Users\Stone Yao\Documents\Visual Studio 2010\Projects\Storm the beach\Storm the beach\obj\x86\Debug\Storm the beach.exe
+C:\Users\Stone Yao\Documents\Visual Studio 2010\Projects\Storm the beach\Storm the beach\obj\x86\Debug\Storm the beach.xml
+C:\Users\Stone Yao\Documents\Visual Studio 2010\Projects\Storm the beach\Storm the beach\obj\x86\Debug\Storm the beach.pdb

@@ -1,0 +1,11 @@
+C:\Users\Stone Yao\documents\visual studio 2010\Projects\Storm the beach\Storm the beach\obj\x86\Release\WindowsApplication1.Resources.resources
+C:\Users\Stone Yao\documents\visual studio 2010\Projects\Storm the beach\Storm the beach\obj\x86\Release\Storm the beach.vbproj.GenerateResource.Cache
+C:\Users\Stone Yao\documents\visual studio 2010\Projects\Storm the beach\Storm the beach\bin\Release\Storm the beach.exe
+C:\Users\Stone Yao\documents\visual studio 2010\Projects\Storm the beach\Storm the beach\bin\Release\Storm the beach.pdb
+C:\Users\Stone Yao\documents\visual studio 2010\Projects\Storm the beach\Storm the beach\bin\Release\Storm the beach.xml
+C:\Users\Stone Yao\documents\visual studio 2010\Projects\Storm the beach\Storm the beach\obj\x86\Release\Storm the beach.exe
+C:\Users\Stone Yao\documents\visual studio 2010\Projects\Storm the beach\Storm the beach\obj\x86\Release\Storm the beach.xml
+C:\Users\Stone Yao\documents\visual studio 2010\Projects\Storm the beach\Storm the beach\obj\x86\Release\Storm the beach.pdb
+C:\Users\Stone Yao\Documents\Visual Studio 2010\Projects\Storm the beach\Storm the beach\obj\x86\Release\WindowsApplication1.hi.resources
+C:\Users\Stone Yao\Documents\Visual Studio 2010\Projects\Storm the beach\Storm the beach\obj\x86\Release\WindowsApplication1.Game.resources
+C:\Users\Stone Yao\Documents\Visual Studio 2010\Projects\Storm the beach\Storm the beach\obj\x86\Release\WindowsApplication1.shop.resources
