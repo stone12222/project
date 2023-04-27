@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #canvas {
+            border: solid 5px blue;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width=300 height=600></canvas>
+    <script>
+        var canvas = document.querySelector('#canvas');
+        var ctx = canvas.getContext('2d');
+
+        const Z1 = [
+            [
+                [1, 1, 0],
+                [0, 1, 1]
+            ],
+            [
+                [0, 1],
+                [1, 1],
+                [1, 0]
+            ],
+            [
+                [1, 1, 0],
+                [0, 1, 1]
+            ],
+            [
+                [0, 1],
+                [1, 1],
+                [1, 0]
+            ]
+        ]
+
+        const O1 = [
+            [
+                [1, 1],
+                [1, 1]
+            ]
+        ];
+
+        const I1 = [
+            [
+                [1, 1, 1, 1]
+            ],
+            [
+                [1],
+                [1],
+                [1],
+                [1],
+            ],
+        ];
+
+        const J1 = [
+            [
+                [1, 0, 0],
+                [1, 1, 1]
+            ],
+            [
+                [1, 1],
+                [1, 0],
+                [1, 0]
+            ],
+            [
+                [1, 1, 1],
+                [0, 0, 1]
+            ],
+            [
+                [0, 1],
+                [0, 1],
+                [1, 1]
+            ]
+        ];
+
+        const L1 = [
+            [
+                [0, 0, 1],
+                [1, 1, 1]
+            ],
+            [
+                [1, 0],
+                [1, 0],
+                [1, 1]
+            ],
+            [
+                [1, 1, 1],
+                [1, 0, 0]
+            ],
+            [
+                [1, 1],
+                [0, 1],
+                [0, 1]
+            ]
+        ];
+
+        const S1 = [
+            [
+                [0, 1, 1],
+                [1, 1, 0]
+            ],
+            [
+                [1, 0],
+                [1, 1],
+                [0, 1]
+            ],
+            [
+                [0, 1, 1],
+                [1, 1, 0]
+            ],
+            [
+                [1, 0],
+                [1, 1],
+                [0, 1]
+            ]
+        ];
+
+        const T1 = [
+            [
+                [0, 1, 0],
+                [1, 1, 1],
+            ],
+            [
+                [0, 1, 0],
+                [0, 1, 1],
+                [0, 1, 0]
+            ],
+            [
+                [0, 0, 0],
+                [1, 1, 1],
+                [0, 1, 0]
+            ],
+            [
+                [0, 1, 0],
+                [1, 1, 0],
+                [0, 1, 0]
+            ]
+        ];
+        //############################################################################
+        board = {
+            colors: ['#D80000', '#F5E301', 'lightblue', '#0176D9', 'orange', 'green', '#A901CC'],
+
+            equals(a, b) {
+                return JSON.stringify(a) === JSON.stringify(b);
+            },
+
+            board_2d: [
+                ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
+                ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
+                ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
+                ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
+                ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
+                ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
+                ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
+                ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
+                ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
+                ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
+                ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
+                ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
+                ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
+                ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
+                ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
+                ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
+                ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
+                ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
+                ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
+                ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
+                ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#']
+            ],
+
+            display_board() {
+                var num = 0;
+                for (var r = 0; r < 20; r++) {
+                    var line = ''
+                    for (var c = 0; c < 10; c++) {
+                        line += this.board_2d[r][c] + ' ';
+                    }
+                    console.log(line + num);
+                    num++;
+                }
+                console.log('SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS');
+            },
+
+            make_board() {
+                tetris_block.make_block();
+
+                for (var row = 0; row < 20; row++) {
+                    for (var col = 0; col < 10; col++) {
+                        tetris_block.draw_block(row, col, 30, 'black', false, '');
+                    }
+                }
+            },
+
+            block_on_board(block, status, clean, x, y, c) {
+                if (clean) {
+                    var color = '#';
+                } else {
+                    var color = c;
+                }
+
+                for (var row = 0; row < block[status].length; row++) {
+                    for (var col = 0; col < block[status][row].length; col++) {
+                        if (block[status][row][col] == 1) {
+                            this.change_board(row + y, col + x, color);
+                        }
+                    }
+                }
+            },
+
+            change_board(r, c, chr) {
+                if (r >= 0) {
+                    this.board_2d[r][c] = chr;
+                }
+            },
+
+            block_on_board_hit(block, status, x, y) {
+                for (var r = 0; r < block[status].length; r++) {
+                    for (var c = 0; c < block[status][r].length; c++) {
+                        if (block[status][r][c] == 1 && this.colors.includes(this.board_2d[r + y][c + x])) {
+                            this.board_check_alive();
+                            return true;
+                        }
+                    }
+                }
+            },
+
+            board_check_point() {
+                for (var r = 19; r >= 0; r--) {
+                    for (var c = 0; c < 10; c++) {
+                        if (this.board_2d[r][c] == '#') {
+                            break;
+                        }
+                    }
+                    if (c == 10) {
+                        this.board_clear_section(r);
+                        this.draw_whole_board()
+                    }
+
+
+                }
+            },
+
+            board_clear_section(r) {
+                var a = ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'];
+                for (var r = r; r > 0; r--) {
+                    if (this.equals(a, this.board_2d[r - 1])) {
+                        this.board_2d[r] = a;
+                        break;
+                    }
+                    this.board_2d[r] = this.board_2d[r - 1];
+                }
+            },
+
+            draw_whole_board() {
+                for (var r = 0; r < 20; r++) {
+                    for (var c = 0; c < 10; c++) {
+                        if (this.board_2d[r][c] == '#') {
+                            tetris_block.draw_block(r, c, 30, 'black', true, 'white');
+                        } else {
+                            tetris_block.draw_block(r, c, 30, 'black', true, this.board_2d[r][c]);
+                        }
+                    }
+                }
+            },
+
+            board_check_alive() {
+                var a = ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'];
+                if (!this.equals(a, this.board_2d[0])) {
+                    paused = true;
+                }
+            }
+        }
+
+        tetris_block = {
+            status: 0,
+            oldStatus: 0,
+            oldX: 0,
+            oldY: 0,
+            blocks: [Z1, O1, I1, J1, L1, S1, T1],
+            b: null,
+            x: 0,
+            y: 0,
+            c: 'red',
+            colors: ['#D80000', '#F5E301', 'lightblue', '#0176D9', 'orange', 'green', '#A901CC'],
+
+            draw_block(row, col, size, color, fill, fillColor) {
+                if (fill) {
+                    ctx.fillStyle = fillColor
+                    ctx.fillRect(col * size, row * size, size, size);
+                }
+                ctx.strokeStyle = color;
+                ctx.strokeRect(col * size, row * size, size, size);
+            },
+
+            create(block, clean, status, x, y) {
+                if (clean) {
+                    var color = 'white';
+                } else {
+                    var color = this.c;
+                }
+
+                for (var row = 0; row < block[status].length; row++) {
+                    for (var col = 0; col < block[status][row].length; col++) {
+                        if (block[status][row][col] == 1) {
+                            this.draw_block(y + row, x + col, 30, 'black', true, color);
+                        }
+                    }
+                }
+
+                board.block_on_board(block, status, clean, x, y, color);
+            },
+
+            out_of_box() {
+                if (this.x > 10 - this.b[this.status][0].length) {
+                    this.x = 10 - this.b[this.status][0].length;
+                }
+            },
+
+            make_block() {
+                this.x = 3;
+                this.y = 0;
+                this.oldX = 0;
+                this.oldY = 0;
+                this.oldStatus = 0;
+                this.status = 0;
+                var num = Math.round(Math.random() * 6);
+                this.b = this.blocks[num];
+                this.c = this.colors[num];
+            },
+
+            block_update(e, coolDown) {
+                if (coolDown == 0) {
+                    this.oldStatus = this.status;
+                    this.oldX = this.x;
+                    this.oldY = this.y;
+
+                    if (e.key == 'e') {
+                        this.status++;
+                        if (this.status == this.b.length) {
+                            this.status = 0;
+                        }
+                        this.out_of_box();
+                    } else if (e.key == 'q') {
+                        this.status--;
+                        if (this.status == -1) {
+                            this.status = this.b.length - 1;
+                        }
+                        this.out_of_box();
+                    } else if (e.key == 'd' && this.x < 10 - this.b[this.status][0].length) {
+                        this.x++;
+                    } else if (e.key == 'a' && this.x > 0) {
+                        this.x--;
+                    } else if (e.key == 's' && this.y < 20 - this.b[this.status].length) {
+                        this.y++;
+                    }
+
+                    this.create(this.b, true, this.oldStatus, this.oldX, this.oldY);
+                    if (board.block_on_board_hit(this.b, this.status, this.x, this.y)) {
+                        this.x = this.oldX;
+                        this.y = this.oldY;
+                    }
+                    this.create(this.b, false, this.status, this.x, this.y);
+                    this.oldStatus = this.status;
+                    this.oldX = this.x;
+                    this.oldY = this.y;
+
+                    return true;
+                }
+            },
+
+            block_move() {
+                if (this.y == 20 - this.b[this.status].length) {
+                    this.make_block();
+                } else if (this.y > 20 - this.b[this.status].length) {
+                    this.y = 20 - this.b[this.status].length;
+                } else {
+                    this.y++;
+                }
+
+                this.create(this.b, true, this.oldStatus, this.x, this.y - 1);
+                if (board.block_on_board_hit(this.b, this.status, this.x, this.y)) {
+                    this.create(this.b, false, this.oldStatus, this.x, this.y - 1);
+                    this.make_block();
+                }
+                this.create(this.b, false, this.status, this.x, this.y);
+
+                board.board_check_point();
+            }
+        }
+        //##################################################################################
+
+        var counter = 0;
+        var coolDown = 0;
+        var paused = false;
+
+        board.make_board();
+
+        window.addEventListener('keydown', function(e) {
+            if (tetris_block.block_update(e, coolDown)) {
+                coolDown = 5;
+            }
+            if (e.key == 'p') {
+                paused = !paused;
+            }
+        });
+
+        (function terisMove() {
+
+            if (!paused) {
+                if (coolDown > 0) {
+                    coolDown--;
+                }
+
+                if (counter == 40) {
+                    counter = 0;
+                    tetris_block.block_move();
+                    board.display_board();
+                }
+                counter++;
+            }
+
+
+            requestAnimationFrame(terisMove);
+        })();
+    </script>
+</body></html>
