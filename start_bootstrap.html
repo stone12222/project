@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            transition: 0.5s
+        }
+
+        nav {
+            padding-bottom: 20px;
+            padding-top: 20px;
+            background-color: #2c3e50;
+            color: white;
+            font-weight: 800;
+            width: 100%;
+            position: fixed;
+            z-index: 1;
+        }
+
+
+
+        #h {
+            width: 100%;
+            padding-bottom: 79px;
+            background-color: #1abc9c;
+            color: black;
+            text-align: center;
+            padding-top: 70px;
+        }
+
+        #p {
+            width: 100%;
+            text-align: center;
+        }
+
+        #p i.fa-plus {
+            /*            display: none;*/
+            visibility: hidden;
+        }
+
+        #p img:hover+i.fa-plus {
+            visibility: visible;
+        }
+
+        #p i.fa-plus:hover {
+            visibility: visible;
+        }
+
+        #b {
+            width: 100%;
+            text-align: center;
+            background-color: #1abc9c;
+            padding-top: 80px;
+        }
+
+        #c {
+
+            width: 100%;
+            height: 600px;
+            text-align: center;
+            background-color: white;
+            padding-bottom: 170px;
+        }
+
+        #end {
+            width: 100%;
+            padding-bottom: 90px;
+            background-color: #2c3e50;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        span {
+            padding-left: 70px;
+            font-size: 24px;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        #first_a {
+            padding-left: 44.5%;
+        }
+
+
+
+        #second_a {
+            margin: 34px;
+        }
+
+        a {
+            font-size: 15px;
+            vertical-align: text-top;
+            text-decoration: none;
+            color: white;
+            transition: 0.2s;
+        }
+
+        #photo {
+            width: 240px;
+            margin-top: 31px;
+        }
+
+        #t1 {
+            color: white;
+            margin-top: 20px;
+            font-size: 65px;
+            font-weight: 900;
+        }
+
+        #t2 {
+            font-size: 50px;
+            color: #2c3e50;
+            margin-top: 75px;
+            font-weight: 900;
+        }
+
+
+
+        #t3 {
+            color: white;
+            font-size: 50px;
+            font-weight: 900;
+        }
+
+        ._1 {
+            background-color: white;
+            height: 3px;
+            display: inline-block;
+            border-radius: 3px;
+            width: 110px;
+        }
+
+        ._2 {
+            background-color: #2c3e50;
+            height: 3px;
+            display: inline-block;
+            border-radius: 3px;
+            width: 110px;
+        }
+
+        ._3 {
+            background-color: white;
+            height: 3px;
+            display: inline-block;
+            border-radius: 3px;
+            width: 110px;
+        }
+
+        #_1s {
+            color: white;
+            margin-top: 18px;
+            font-size: 32px;
+            margin-left: 15px;
+            margin-right: 10px;
+        }
+
+        #_2s {
+            color: #2c3e50;
+            margin-top: 18px;
+            font-size: 32px;
+            margin-left: 15px;
+            margin-right: 10px;
+        }
+
+        #_3s {
+            color: white;
+            margin-top: 18px;
+            font-size: 32px;
+            margin-left: 15px;
+            margin-right: 10px;
+        }
+
+        #dis {
+            color: white;
+            font-size: 22px;
+            margin-top: 35px;
+        }
+
+        .p_i {
+            width: 358px;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+
+        .p_i:hover {
+            opacity: 0.1;
+        }
+
+        .img {
+            /*            border:solid;*/
+            margin-top: 39px;
+            margin-left: 18px;
+            height: 258px;
+            width: 358px;
+            border-radius: 12px;
+            display: inline-block;
+            background-color: #1abc9c;
+        }
+
+        #plus {
+            position: relative;
+            color: white;
+            font-size: 70px;
+            bottom: 160px;
+
+        }
+
+        #div4,
+        #div5,
+        #div6 {
+            position: relative;
+            bottom: 60px;
+        }
+
+        .c {
+            margin-top: 30px;
+            display: inline-block;
+            font-size: 18px;
+            color: white;
+            width: 350px;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        #c2 {
+            vertical-align: top;
+            margin-left: 23px;
+        }
+
+        #d {
+            display: inline-block;
+            margin-top: 35px;
+            margin-bottom: 98px;
+            width: 225px;
+            height: 65px;
+            background-color: transparent;
+            border: solid white;
+            border-radius: 7px;
+            transition: 0.2s
+        }
+
+        #d:hover {
+            background-color: white;
+            color: black;
+        }
+
+        #dd {
+            margin-top: 20px;
+            font-size: 19px;
+        }
+
+        #dl {
+            margin-right: 10px;
+        }
+
+        .con {
+            border: solid white;
+            width: 600px;
+            height: 30px;
+            border-bottom: solid 0.5px #ced4da;
+            margin-top: 50px;
+            margin-left: 25.8%;
+            display: block;
+            padding-bottom: 15px;
+        }
+
+        ::placeholder {
+
+            font-size: 24px;
+            color: #6c757d;
+        }
+
+        textarea {
+            font-family: sans-serif;
+            font-size: 24px;
+            color: #6c757d;
+            border: solid white;
+            border-bottom: solid 0.5px #ced4da;
+            margin-top: 50px;
+            padding-bottom: 15px;
+            height: 110px;
+        }
+
+        #sub {
+            display: block;
+            color: white;
+            font-size: 18px;
+            margin-top: 10px;
+            margin-left: 25.8%;
+            background-color: #6bd4bf;
+            border: solid white;
+            width: 110px;
+            height: 70px;
+            border-radius: 11px;
+        }
+
+        .st {
+            color: white;
+            display: inline-block;
+            margin-top: 70px;
+            font-weight: 800;
+            font-size: 24px;
+        }
+
+        #spec1 {
+            margin-left: 185px;
+        }
+
+        #spec2 {
+            margin-left: 185px;
+        }
+
+        #spec3 {
+            margin-left: 140px;
+        }
+
+        #add {
+            text-align: center;
+            display: inline-block;
+            color: white;
+            font-size: 19px;
+            width: 210px;
+            margin-left: 150px;
+        }
+
+        #i1 {
+            margin-left: 140px;
+        }
+
+        .logo {
+            text-align: center;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            color: white;
+            font-size: 20px;
+            border: solid;
+            margin-right: 5px;
+            border-radius: 100%;
+            transition: 0.2s;
+        }
+
+        #icon {
+            margin-top: 15px;
+        }
+
+        #about {
+            text-align: center;
+            font-size: 19px;
+            display: inline-block;
+            width: 350px;
+            color: white;
+            vertical-align: top;
+            margin-left: 80px;
+        }
+
+        #sb {
+            font-size: 19px;
+            display: inline-block;
+            color: #6bd4bf;
+            vertical-align: top;
+            text-decoration: underline;
+        }
+
+        #words {
+            margin-top: 15px
+        }
+
+        #i1:hover {
+            background-color: white;
+            color: black;
+            border: solid white;
+        }
+
+        #i2:hover {
+            background-color: white;
+            color: black;
+            border: solid white;
+        }
+
+        #i3:hover {
+            background-color: white;
+            color: black;
+            border: solid white;
+        }
+
+        #i4:hover {
+            background-color: white;
+            color: black;
+            border: solid white;
+        }
+
+        #copy {
+            text-align: center;
+            background-color: #1a252f;
+            width: 100%-1px;
+            padding-bottom: 25px;
+            border: solid #1a252f;
+        }
+
+        #last {
+            margin-top: 24px;
+            color: white;
+            font-size: 13px;
+        }
+
+        #menu {
+            display: inline-block;
+            padding-right: 3px;
+        }
+
+        #btn {
+            display: none;
+            background-color: #1abc9c;
+            border: none;
+            width: 84px;
+            height: 43px;
+            margin-left: 42%;
+            border-radius: 10px;
+            margin-top: 14px;
+            color: white;
+        }
+
+        #btn:checked {
+            display: none;
+        }
+
+        @media screen and (max-width:1199px) {
+            #first_a {
+                padding-left: 36.5%;
+            }
+        }
+
+        @media screen and (max-width:992px) {
+            .nav_a {
+                display: none;
+            }
+
+            #btn {
+                display: inline-block;
+
+            }
+
+            nav {
+                padding-top: 0;
+                padding-bottom: 14px;
+            }
+
+            span {
+                vertical-align: middle;
+                font-size: 20px;
+                padding-left: 140px;
+            }
+
+        }
+
+        @media screen and (max-width:767px) {
+
+            #btn {
+                margin-left: 30%;
+
+            }
+
+            span {
+                vertical-align: middle;
+                font-size: 20px;
+                padding-left: 118px;
+            }
+        }
+
+        @media screen and (max-width:575px) {
+
+            #btn {
+                margin-left: 35%;
+
+            }
+
+            span {
+                vertical-align: middle;
+                font-size: 20px;
+                padding-left: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div>
+            <span>START BOOTSTRAP</span>
+            <a href="#p" id='first_a' class='nav_a'>PORTFOLIO</a>
+            <a href="#b" id='second_a' class='nav_a'>ABOUT</a>
+            <a href="#c" id='third_a' class='nav_a'>CONTACT</a>
+            <button id='btn'>
+                <div id='menu'>MENU</div><i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+
+    <header>
+        <div id="h">
+            <img src="https://startbootstrap.github.io/startbootstrap-freelancer/assets/img/avataaars.svg" alt="" id='photo'>
+            <div id="t1">START BOOTSTRAP</div>
+            <hr class='_1'><i class="fas fa-star" id='_1s'></i>
+            <hr class='_1'>
+            <p id='dis'>Graphic Artist - Web Designer - Illustrator</p>
+        </div>
+    </header>
+
+    <main>
+        <div id='p'>
+            <div id="t2">PORTFOLIO</div>
+            <hr class='_2'><i class="fas fa-star" id='_2s'></i>
+            <hr class="_2">
+            <br>
+            <div class='img'>
+                <img src="https://startbootstrap.github.io/startbootstrap-freelancer/assets/img/portfolio/cabin.png" alt="" class='p_i'>
+                <i class="fas fa-plus" id='plus'></i>
+            </div>
+            <div class='img'>
+                <img src="https://startbootstrap.github.io/startbootstrap-freelancer/assets/img/portfolio/cake.png" alt="" class='p_i'>
+                <i class="fas fa-plus" id='plus'></i>
+            </div>
+            <div class='img'>
+                <img src="https://startbootstrap.github.io/startbootstrap-freelancer/assets/img/portfolio/circus.png" alt="" class='p_i'>
+                <i class="fas fa-plus" id='plus'></i>
+            </div>
+            <div class='img' id='div4'>
+                <img src="https://startbootstrap.github.io/startbootstrap-freelancer/assets/img/portfolio/game.png" alt="" class='p_i'>
+                <i class="fas fa-plus" id='plus'></i>
+            </div>
+            <div class='img' id='div5'>
+                <img src="https://startbootstrap.github.io/startbootstrap-freelancer/assets/img/portfolio/safe.png" alt="" class='p_i'>
+                <i class="fas fa-plus" id='plus'></i>
+            </div>
+            <div class='img' id='div6'>
+                <img src="https://startbootstrap.github.io/startbootstrap-freelancer/assets/img/portfolio/submarine.png" alt="" class='p_i'>
+                <i class="fas fa-plus" id='plus'></i>
+            </div>
+        </div>
+
+        <div id="b">
+            <div id="t3">ABOUT</div>
+            <hr class='_3'><i class="fas fa-star" id='_3s'></i>
+            <hr class='_3'>
+            <br>
+            <div class="c">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</div>
+            <div class="c" id='c2'>You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</div>
+            <br>
+            <a href='https://startbootstrap.com/previews/freelancer' id='d'>
+                <div id='dd'><i class="fas fa-download" id='dl'></i>Free Download!</div>
+            </a>
+        </div>
+
+        <div id="c">
+            <div id="t2">CONTACT ME</div>
+            <hr class='_2'><i class="fas fa-star" id='_2s'></i>
+            <hr class="_2">
+            <form action="">
+                <input class='con' type="text" placeholder="Full name" name='contact'>
+                <input class='con' type="email" placeholder="Email address" name='contact'>
+                <input class='con' type="tel" placeholder="Phone number" name='contact'>
+                <textarea name="contact" cols="49" rows="3">Message</textarea>
+                <br>
+                <input type="submit" id='sub'>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div id="end">
+            <div class='st' id='spec1'>LOCATION</div>
+            <div class='st' id='spec2'>AROUND THE WEB</div>
+            <div class='st' id='spec3'>ABOUT FREELANCER</div>
+
+            <div id='words'>
+                <div id='add'>
+                    2215 John Daniel Drive
+                    Clark, MO 65243
+                </div>
+
+                <div class='logo' id='i1'>
+                    <i class="fab fa-facebook-f" id='icon'></i>
+                </div>
+                <div class='logo' id='i2'>
+                    <i class="fab fa-twitter" id='icon'></i>
+                </div>
+                <div class='logo' id='i3'>
+                    <i class="fab fa-instagram" id='icon'></i>
+                </div>
+                <div class='logo' id='i4'>
+                    <i class="fas fa-basketball-ball" id='icon'></i>
+                </div>
+
+                <div id='about'>
+                    Freelance is a free to use, MIT licensed Bootstrap theme created by <a href="#end" id='sb'>Start Bootstrap</a> .
+                </div>
+            </div>
+        </div>
+
+        <div id='copy'>
+            <div id="last">Copyright &copy; 2021 Stone Yao's Website 2021</div>
+        </div>
+    </footer>
+</body></html>
